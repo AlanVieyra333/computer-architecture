@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/impact.xsl
+OUTFILE=/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips
+LICENSE=iMPACT
+USER_INFO=iMPACT

@@ -1,0 +1,5 @@
+[Inputs]
+=dir[11:0]=
+[Outputs]
+=operation[24:0]=
+[BiDir]

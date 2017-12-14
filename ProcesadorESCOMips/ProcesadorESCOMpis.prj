@@ -1,0 +1,2 @@
+vhdl work "modules/logFiles/logFiles.vhd"
+vhdl work "ProcesadorESCOMpis.vhd"

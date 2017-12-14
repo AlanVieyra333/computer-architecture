@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+dataMemory instance_name (
+    .clk(clk), 
+    .data_in(data_in), 
+    .dir(dir), 
+    .wd(wd), 
+    .data_out(data_out)
+    );
+
+

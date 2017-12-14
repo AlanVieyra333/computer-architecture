@@ -1,0 +1,90 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to /home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Parameter xsthdpdir set to /home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Reading design: UnitControl.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ControlUnit/Modules/Mux2.vhd" into library work
+Parsing entity <Mux_20>.
+Parsing architecture <Behavioral> of entity <mux_20>.
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ControlUnit/Modules/Mux1.vhd" into library work
+Parsing entity <Mux_5>.
+Parsing architecture <Behavioral> of entity <mux_5>.
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ControlUnit/Modules/MicrocodeOperation.vhd" into library work
+Parsing entity <MicrocodeOperation>.
+Parsing architecture <Behavioral> of entity <microcodeoperation>.
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ControlUnit/Modules/MicrocodeFunction.vhd" into library work
+Parsing entity <MicrocodeFunction>.
+Parsing architecture <Behavioral> of entity <microcodefunction>.
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ControlUnit/Modules/Level.vhd" into library work
+Parsing entity <Level>.
+Parsing architecture <Behavioral> of entity <level>.
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ControlUnit/Modules/InstructionDecoder.vhd" into library work
+Parsing entity <InstructionDecoder>.
+Parsing architecture <Behavioral> of entity <instructiondecoder>.
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ControlUnit/Modules/Flags.vhd" into library work
+Parsing entity <Flags>.
+Parsing architecture <Behavioral> of entity <flags>.
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ControlUnit/Modules/Control.vhd" into library work
+Parsing entity <Control>.
+Parsing architecture <Behavioral> of entity <control>.
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ControlUnit/Modules/Condition.vhd" into library work
+Parsing entity <Condition>.
+Parsing architecture <Behavioral> of entity <condition>.
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ControlUnit/ControlUnit.vhd" into library work
+Parsing package <UnitControl_pkg>.
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ControlUnit/Principal.vhd" into library work
+Parsing entity <UnitControl>.
+Parsing architecture <Behavioral> of entity <unitcontrol>.
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.77 secs
+ 
+--> 
+
+
+Total memory usage is 339332 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

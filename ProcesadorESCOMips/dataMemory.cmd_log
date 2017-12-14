@@ -1,0 +1,3 @@
+vhdtdtfi -lib work modules/dataMemory/dataMemory.vhd -prj ProcesadorESCOMips -o dataMemory.spl -module dataMemory -template /usr/local/xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 dataMemory.spl /home/developer/Proyectos/xilinx/ProcesadorESCOMips/dataMemory.sym 
+vhdtdtfi -prj ProcesadorESCOMips -o /home/developer/Proyectos/xilinx/ProcesadorESCOMips/dataMemory.tfi -module dataMemory -template /usr/local/xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror -lib work modules/dataMemory/dataMemory.vhd 

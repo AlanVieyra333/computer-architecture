@@ -1,0 +1,34 @@
+Running: /usr/local/xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/developer/Proyectos/xilinx/ALU/ALU_nbits_isim_beh.exe -prj /home/developer/Proyectos/xilinx/ALU/ALU_nbits_beh.prj work.ALU_nbits 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ALU/Mux2.vhd" into library work
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ALU/Mux1.vhd" into library work
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ALU/Carry.vhd" into library work
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ALU/ALU_pkg.vhd" into library work
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ALU/ALU_1bit.vhd" into library work
+WARNING:HDLCompiler:946 - "/home/developer/Proyectos/xilinx/ALU/ALU_1bit.vhd" Line 41: Actual for formal port input2 is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/developer/Proyectos/xilinx/ALU/ALU_1bit.vhd" Line 48: Actual for formal port input2 is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/developer/Proyectos/xilinx/ALU/ALU_1bit.vhd" Line 62: Actual for formal port input1 is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/developer/Proyectos/xilinx/ALU/ALU_1bit.vhd" Line 63: Actual for formal port input2 is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/developer/Proyectos/xilinx/ALU/ALU_1bit.vhd" Line 64: Actual for formal port input3 is neither a static name nor a globally static expression
+Parsing VHDL file "/home/developer/Proyectos/xilinx/ALU/ALU_nbits.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 95336 KB
+Fuse CPU Usage: 1380 ms
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package alu_pkg
+Compiling architecture behavioral of entity Mux1 [mux1_default]
+Compiling architecture behavioral of entity Carry [carry_default]
+Compiling architecture behavioral of entity Mux2 [mux2_default]
+Compiling architecture behavioral of entity ALU_1bit [alu_1bit_default]
+Compiling architecture behavioral of entity alu_nbits
+Time Resolution for simulation is 1ps.
+Compiled 12 VHDL Units
+Built simulation executable /home/developer/Proyectos/xilinx/ALU/ALU_nbits_isim_beh.exe
+Fuse Memory Usage: 663060 KB
+Fuse CPU Usage: 1420 ms
+GCC CPU Usage: 390 ms

@@ -1,0 +1,2 @@
+vhdl isim_temp "modules/dataMemory/dataMemory.vhd"
+vhdl isim_temp "modules/dataMemory/dataMemory_TB.vhd"

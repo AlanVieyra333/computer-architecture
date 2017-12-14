@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "/home/developer/Proyectos/xilinx/ALU/ALU_1bit.xst" -ofn "/home/developer/Proyectos/xilinx/ALU/ALU_1bit.syr" 
+xst -intstyle ise -ifn "/home/developer/Proyectos/xilinx/ALU/ALU_1bit.xst" -ofn "/home/developer/Proyectos/xilinx/ALU/ALU_1bit.syr" 

@@ -1,0 +1,2 @@
+vhdtdtfi -lib work modules/programMemory/programMemory.vhd -prj ProcesadorESCOMips -o programMemory.spl -module programMemory -template /usr/local/xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family artix7 programMemory.spl /home/developer/Proyectos/xilinx/ProcesadorESCOMips/programMemory.sym 

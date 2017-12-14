@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/developer/Proyectos/xilinx/ALU/Mux2.xst" -ofn "/home/developer/Proyectos/xilinx/ALU/Mux2.syr" 

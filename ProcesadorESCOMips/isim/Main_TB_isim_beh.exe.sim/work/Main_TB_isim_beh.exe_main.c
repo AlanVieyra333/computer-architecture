@@ -1,0 +1,89 @@
+/**********************************************************************/
+/*   ____  ____                                                       */
+/*  /   /\/   /                                                       */
+/* /___/  \  /                                                        */
+/* \   \   \/                                                       */
+/*  \   \        Copyright (c) 2003-2009 Xilinx, Inc.                */
+/*  /   /          All Right Reserved.                                 */
+/* /---/   /\                                                         */
+/* \   \  /  \                                                      */
+/*  \___\/\___\                                                    */
+/***********************************************************************/
+
+#include "xsi.h"
+
+struct XSI_INFO xsi_info;
+
+char *IEEE_P_2592010699;
+char *STD_STANDARD;
+char *WORK_P_2725559894;
+char *IEEE_P_3620187407;
+char *IEEE_P_3499444699;
+char *WORK_P_2441718340;
+char *IEEE_P_1242562249;
+char *WORK_P_0612103898;
+char *STD_TEXTIO;
+char *IEEE_P_3564397177;
+
+
+int main(int argc, char **argv)
+{
+    xsi_init_design(argc, argv);
+    xsi_register_info(&xsi_info);
+
+    xsi_register_min_prec_unit(-12);
+    std_textio_init();
+    ieee_p_2592010699_init();
+    ieee_p_3564397177_init();
+    ieee_p_3499444699_init();
+    ieee_p_3620187407_init();
+    ieee_p_1242562249_init();
+    work_p_0612103898_init();
+    work_p_2725559894_init();
+    work_p_2441718340_init();
+    work_a_1640377228_3212880686_init();
+    work_a_3983655784_3212880686_init();
+    work_a_4154973858_3212880686_init();
+    work_a_3730903820_3212880686_init();
+    work_a_1642543707_3212880686_init();
+    work_a_0308474336_3212880686_init();
+    work_a_3173253979_3212880686_init();
+    work_a_0737135909_3212880686_init();
+    work_a_3276679129_3212880686_init();
+    work_a_1932458323_3212880686_init();
+    work_a_3222946569_3212880686_init();
+    work_a_0678885791_3212880686_init();
+    work_a_0778311569_3212880686_init();
+    work_a_2588265483_3212880686_init();
+    work_a_0226509006_3212880686_init();
+    work_a_0179176252_3212880686_init();
+    work_a_4275376173_3212880686_init();
+    work_a_1561973598_3212880686_init();
+    work_a_3057238492_3212880686_init();
+    work_a_2233526063_3212880686_init();
+    work_a_0532180842_3212880686_init();
+    work_a_0388574677_3212880686_init();
+    work_a_3058291992_3212880686_init();
+    work_a_1057877468_3212880686_init();
+    work_a_1430113433_3212880686_init();
+    work_a_1774854872_3212880686_init();
+    work_a_0750423891_2372691052_init();
+
+
+    xsi_register_tops("work_a_0750423891_2372691052");
+
+    IEEE_P_2592010699 = xsi_get_engine_memory("ieee_p_2592010699");
+    xsi_register_ieee_std_logic_1164(IEEE_P_2592010699);
+    STD_STANDARD = xsi_get_engine_memory("std_standard");
+    WORK_P_2725559894 = xsi_get_engine_memory("work_p_2725559894");
+    IEEE_P_3620187407 = xsi_get_engine_memory("ieee_p_3620187407");
+    IEEE_P_3499444699 = xsi_get_engine_memory("ieee_p_3499444699");
+    WORK_P_2441718340 = xsi_get_engine_memory("work_p_2441718340");
+    IEEE_P_1242562249 = xsi_get_engine_memory("ieee_p_1242562249");
+    WORK_P_0612103898 = xsi_get_engine_memory("work_p_0612103898");
+    STD_TEXTIO = xsi_get_engine_memory("std_textio");
+    IEEE_P_3564397177 = xsi_get_engine_memory("ieee_p_3564397177");
+
+    return xsi_run_simulation(argc, argv);
+
+}

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/developer/Proyectos/xilinx/ALU/ALU_nbits_isim_beh.exe" -prj "/home/developer/Proyectos/xilinx/ALU/ALU_nbits_beh.prj" "work.ALU_nbits" 
