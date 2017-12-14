@@ -1,2 +1,0 @@
-vhdl isim_temp "modules/programMemory/programMemory.vhd"
-vhdl isim_temp "modules/programMemory/programMemory_TB.vhd"

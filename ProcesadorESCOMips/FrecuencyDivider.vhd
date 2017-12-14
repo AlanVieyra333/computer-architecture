@@ -4,7 +4,8 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity FrecuencyDivider is
 	generic (
-		constant frec :  unsigned(31 downto 0) := "11101110011010110010100000000000" -- 4,000,000,000
+		--constant frec :  unsigned(31 downto 0) := "11101110011010110010100000000000" -- 4,000,000,000
+		constant frec :  unsigned(31 downto 0) := "00000101111101011110000100000000" -- 100,000,000
 		--constant frec :  unsigned(31 downto 0) := "00000000000000000000000000001010" -- 10
 		);
 	Port ( osc_clk : in  STD_LOGIC;

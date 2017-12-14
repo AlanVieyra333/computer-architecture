@@ -1,4 +1,0 @@
-vhdl work "ProcesadorESCOMpis.vhd"
-vhdl work "modules/logFiles/logFiles.vhd"
-vhdl work "modules/dataMemory/dataMemory.vhd"
-vhdl work "main.vhd"

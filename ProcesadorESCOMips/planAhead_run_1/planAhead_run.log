@@ -5,13 +5,13 @@
 
 INFO: [Common 17-78] Attempting to get a license: PlanAhead
 INFO: [Common 17-290] Got license for PlanAhead
-INFO: [Common 17-86] Your PlanAhead license expires in -987 day(s)
+INFO: [Common 17-86] Your PlanAhead license expires in -988 day(s)
 INFO: [Device 21-36] Loading parts and site information from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
 Parsing RTL primitives file [/usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 Finished parsing RTL primitives file [/usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 start_gui
 source /home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/pa.fromNetlist.tcl
-# create_project -name ProcesadorESCOMips -dir "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/planAhead_run_1" -part xc7a100tcsg324-3
+# create_project -name ProcesadorESCOMips -dir "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/planAhead_run_2" -part xc7a100tcsg324-3
 # set_property design_mode GateLvl [get_property srcset [current_run -impl]]
 # set_property edif_top_file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ngc" [ get_property srcset [ current_run ] ]
 # add_files -norecurse { {/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips} }
@@ -43,11 +43,11 @@ WARNING:NetListWriters:306 - Signal bus ESCOMips/ALU/cAux<10 : 1> on block Main
    is not reconstructed, because there are some missing bus signals.
   finished :Prep
 Writing EDIF netlist file Main.edif ...
-ngc2edif: Total memory usage is 106800 kilobytes
+ngc2edif: Total memory usage is 107080 kilobytes
 
-Parsing EDIF File [./planAhead_run_1/ProcesadorESCOMips.data/cache/Main_ngc_9b71c893.edif]
-Finished Parsing EDIF File [./planAhead_run_1/ProcesadorESCOMips.data/cache/Main_ngc_9b71c893.edif]
-INFO: [Netlist 29-17] Analyzing 135 Unisim elements for replacement
+Parsing EDIF File [./planAhead_run_2/ProcesadorESCOMips.data/cache/Main_ngc_9b71c893.edif]
+Finished Parsing EDIF File [./planAhead_run_2/ProcesadorESCOMips.data/cache/Main_ngc_9b71c893.edif]
+INFO: [Netlist 29-17] Analyzing 167 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-43] Netlist 'Main' is not ideal for floorplanning, since the cellview 'Main' defined in file 'Main.ngc' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 Loading clock regions from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/artix7/artix7/xc7a100t/ClockRegion.xml
@@ -61,27 +61,23 @@ Loading list of drcs for the architecture : /usr/local/xilinx/14.7/ISE_DS/PlanAh
 Parsing UCF File [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf]
 Finished Parsing UCF File [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf]
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 135 instances were transformed.
+  A total of 167 instances were transformed.
   BUFGP => BUFGP (IBUF, BUFG): 1 instances
-  FDC => FDCE: 1 instances
+  FDC => FDCE: 33 instances
   FDCE_1 => FDCE (inverted pins: C): 3 instances
   FDC_1 => FDCE (inverted pins: C): 1 instances
   FD_1 => FDCE (inverted pins: C): 1 instances
   RAM256X1S => RAM256X1S (RAMS64E, RAMS64E, RAMS64E, RAMS64E, MUXF7, MUXF7, MUXF8): 128 instances
 
-Phase 0 | Netlist Checksum: cba6db45
-link_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:17 . Memory (MB): peak = 3066.922 ; gain = 309.688
-set_property iostandard LVCMOS33 [get_ports [list RCLK]]
-set_property iostandard LVCMOS33 [get_ports [list RCLR]]
-set_property package_pin "" [get_ports [list  RCLK]]
-startgroup
-set_property package_pin V10 [get_ports RCLK]
-endgroup
-startgroup
-set_property package_pin E3 [get_ports RCLR]
-endgroup
+Phase 0 | Netlist Checksum: d6dac68d
+link_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:17 . Memory (MB): peak = 3085.941 ; gain = 314.500
+set_property iostandard {} [get_ports [list {DATA[7]} {DATA[6]} {DATA[5]} {DATA[4]} {DATA[3]} {DATA[2]} {DATA[1]} {DATA[0]}]]
+set_property iostandard LVCMOS18 [get_ports [list RCLK]]
+set_property iostandard {} [get_ports [list {PC[7]} {PC[6]} {PC[5]} {PC[4]} {PC[3]} {PC[2]} {PC[1]} {PC[0]}]]
+set_property iostandard {} [get_ports [list RCLR]]
+set_property iostandard {} [get_ports [list RCLK]]
 save_constraints
 exit
 ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
-INFO: [Common 17-206] Exiting PlanAhead at Tue Dec 12 12:39:02 2017...
+INFO: [Common 17-206] Exiting PlanAhead at Wed Dec 13 22:13:21 2017...
 INFO: [Common 17-83] Releasing license: PlanAhead

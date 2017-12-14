@@ -1,2 +1,0 @@
-vhdl isim_temp "modules/logFiles/logFiles.vhd"
-vhdl isim_temp "modules/logFiles/logFiles_TB.vhd"

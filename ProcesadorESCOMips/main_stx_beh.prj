@@ -1,4 +1,0 @@
-vhdl isim_temp "ProcesadorESCOMpis.vhd"
-vhdl isim_temp "modules/logFiles/logFiles.vhd"
-vhdl isim_temp "modules/dataMemory/dataMemory.vhd"
-vhdl isim_temp "main.vhd"

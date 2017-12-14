@@ -8,12 +8,6 @@
         <Attr Name="UsedInImplementation" Val="1"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../main.ngc">
-      <FileInfo>
-        <Attr Name="UsedInSynthesis" Val="1"/>
-        <Attr Name="UsedInImplementation" Val="1"/>
-      </FileInfo>
-    </File>
     <File Path="$PDATADIR/sources_1/ports.xml">
       <FileInfo SFType="PortsDb"/>
     </File>

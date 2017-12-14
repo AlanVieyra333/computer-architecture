@@ -5,7 +5,7 @@
 
 INFO: [Common 17-78] Attempting to get a license: PlanAhead
 INFO: [Common 17-290] Got license for PlanAhead
-INFO: [Common 17-86] Your PlanAhead license expires in -987 day(s)
+INFO: [Common 17-86] Your PlanAhead license expires in -988 day(s)
 INFO: [Device 21-36] Loading parts and site information from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
 Parsing RTL primitives file [/usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 Finished parsing RTL primitives file [/usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
@@ -15,6 +15,7 @@ source /home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/pa
 # set_property design_mode GateLvl [get_property srcset [current_run -impl]]
 # set_property edif_top_file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ngc" [ get_property srcset [ current_run ] ]
 # add_files -norecurse { {/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips} }
+# set_param project.pinAheadLayout  yes
 # set_property target_constrs_file "Main.ucf" [current_fileset -constrset]
 Adding file '/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf' to fileset 'constrs_1'
 # add_files [list {Main.ucf}] -fileset [get_property constrset [current_run]]
@@ -43,7 +44,7 @@ WARNING:NetListWriters:306 - Signal bus ESCOMips/ALU/cAux<10 : 1> on block Main
    is not reconstructed, because there are some missing bus signals.
   finished :Prep
 Writing EDIF netlist file Main.edif ...
-ngc2edif: Total memory usage is 107072 kilobytes
+ngc2edif: Total memory usage is 107076 kilobytes
 
 Parsing EDIF File [./planAhead_run_4/ProcesadorESCOMips.data/cache/Main_ngc_9b71c893.edif]
 Finished Parsing EDIF File [./planAhead_run_4/ProcesadorESCOMips.data/cache/Main_ngc_9b71c893.edif]
@@ -70,59 +71,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM256X1S => RAM256X1S (RAMS64E, RAMS64E, RAMS64E, RAMS64E, MUXF7, MUXF7, MUXF8): 128 instances
 
 Phase 0 | Netlist Checksum: d6dac68d
-link_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:14 . Memory (MB): peak = 3066.324 ; gain = 336.457
+link_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:15 . Memory (MB): peak = 3064.895 ; gain = 340.371
 set_property iostandard LVCMOS33 [get_ports [list {DATA[7]} {DATA[6]} {DATA[5]} {DATA[4]} {DATA[3]} {DATA[2]} {DATA[1]} {DATA[0]}]]
 set_property iostandard LVCMOS33 [get_ports [list {PC[7]} {PC[6]} {PC[5]} {PC[4]} {PC[3]} {PC[2]} {PC[1]} {PC[0]}]]
-startgroup
-set_property package_pin H17 [get_ports {DATA[7]}]
-endgroup
-startgroup
-set_property package_pin K15 [get_ports {DATA[6]}]
-endgroup
-startgroup
-set_property package_pin J13 [get_ports {DATA[5]}]
-endgroup
-startgroup
-set_property package_pin N14 [get_ports {DATA[4]}]
-endgroup
-startgroup
-set_property package_pin R18 [get_ports {DATA[3]}]
-endgroup
-startgroup
-set_property package_pin V17 [get_ports {DATA[2]}]
-endgroup
-startgroup
-set_property package_pin U17 [get_ports {DATA[1]}]
-endgroup
-startgroup
-set_property package_pin U16 [get_ports {DATA[0]}]
-endgroup
-startgroup
-set_property package_pin V16 [get_ports {PC[7]}]
-endgroup
-startgroup
-set_property package_pin T15 [get_ports {PC[6]}]
-endgroup
-startgroup
-set_property package_pin U14 [get_ports {PC[5]}]
-endgroup
-startgroup
-set_property package_pin T16 [get_ports {PC[4]}]
-endgroup
-startgroup
-set_property package_pin V15 [get_ports {PC[3]}]
-endgroup
-startgroup
-set_property package_pin V14 [get_ports {PC[2]}]
-endgroup
-startgroup
-set_property package_pin V12 [get_ports {PC[1]}]
-endgroup
-startgroup
-set_property package_pin V11 [get_ports {PC[0]}]
-endgroup
+set_property iostandard LVCMOS33 [get_ports [list RCLK]]
+set_property iostandard LVCMOS33 [get_ports [list RCLR]]
 save_constraints
 exit
 ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
-INFO: [Common 17-206] Exiting PlanAhead at Tue Dec 12 16:05:59 2017...
+INFO: [Common 17-206] Exiting PlanAhead at Wed Dec 13 22:48:46 2017...
 INFO: [Common 17-83] Releasing license: PlanAhead

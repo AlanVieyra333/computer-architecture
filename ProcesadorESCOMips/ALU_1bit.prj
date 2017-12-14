@@ -1,5 +1,0 @@
-vhdl work "../ALU/Mux2.vhd"
-vhdl work "../ALU/Mux1.vhd"
-vhdl work "../ALU/Carry.vhd"
-vhdl work "../ALU/ALU_pkg.vhd"
-vhdl work "../ALU/ALU_1bit.vhd"

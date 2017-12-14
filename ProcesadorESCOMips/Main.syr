@@ -269,7 +269,7 @@ Unit <Main> synthesized.
 
 Synthesizing Unit <FrecuencyDivider>.
     Related source file is "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/FrecuencyDivider.vhd".
-        frec = "11101110011010110010100000000000"
+        frec = "00000101111101011110000100000000"
     Found 1-bit register for signal <clk_aux>.
     Found 32-bit register for signal <count>.
     Found 32-bit adder for signal <count[31]_GND_6_o_add_0_OUT> created at line 1241.
@@ -3153,12 +3153,12 @@ RCLK           |    2.571|         |         |         |
 
 
 Total REAL time to Xst completion: 21.00 secs
-Total CPU time to Xst completion: 18.84 secs
+Total CPU time to Xst completion: 19.75 secs
  
 --> 
 
 
-Total memory usage is 530240 kilobytes
+Total memory usage is 529876 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings : 2174 (   0 filtered)

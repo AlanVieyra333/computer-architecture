@@ -1,1 +1,0 @@
-xst -intstyle ise -ifn "/home/developer/Proyectos/xilinx/ProcesadorESCOMips/ProcesadorESCOMpis.xst" -ofn "/home/developer/Proyectos/xilinx/ProcesadorESCOMips/ProcesadorESCOMpis.syr" 

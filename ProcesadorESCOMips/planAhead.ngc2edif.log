@@ -74,3 +74,60 @@ WARNING:NetListWriters:306 - Signal bus ESCOMips/ALU/cAux<10 : 1> on block Main
 Writing EDIF netlist file Main.edif ...
 ngc2edif: Total memory usage is 107080 kilobytes
 
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design Main.ngc ...
+WARNING:NetListWriters:298 - No output is written to Main.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus ESCOMips/instruction<24 : 0> on block
+   Main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus ESCOMips/sop2_result<14 : 1> on block
+   Main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus ESCOMips/sop1_result<15 : 0> on block
+   Main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus ESCOMips/ALU/cAux<10 : 1> on block Main
+   is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file Main.edif ...
+ngc2edif: Total memory usage is 107080 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design Main.ngc ...
+WARNING:NetListWriters:298 - No output is written to Main.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus ESCOMips/instruction<24 : 0> on block
+   Main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus ESCOMips/sop2_result<14 : 1> on block
+   Main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus ESCOMips/sop1_result<15 : 0> on block
+   Main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus ESCOMips/ALU/cAux<10 : 1> on block Main
+   is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file Main.edif ...
+ngc2edif: Total memory usage is 107072 kilobytes
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design Main.ngc ...
+WARNING:NetListWriters:298 - No output is written to Main.xncf, ignored.
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus ESCOMips/instruction<24 : 0> on block
+   Main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus ESCOMips/sop2_result<14 : 1> on block
+   Main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus ESCOMips/sop1_result<15 : 0> on block
+   Main is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus ESCOMips/ALU/cAux<10 : 1> on block Main
+   is not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file Main.edif ...
+ngc2edif: Total memory usage is 107076 kilobytes
+

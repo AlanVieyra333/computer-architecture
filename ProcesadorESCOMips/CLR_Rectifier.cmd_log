@@ -1,1 +1,0 @@
-xst -intstyle ise -ifn "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/CLR_Rectifier.xst" -ofn "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/CLR_Rectifier.syr" 
