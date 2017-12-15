@@ -5,8 +5,8 @@ use work.ProcesadorESCOMpis.all;
 
 entity Main is
     Port ( RCLR, RCLK : in  STD_LOGIC;
-           DATA : out  STD_LOGIC_VECTOR (7 downto 0);
-           PC : out  STD_LOGIC_VECTOR (7 downto 0));
+           DATA : out  STD_LOGIC_VECTOR (3 downto 0);
+           PC : out  STD_LOGIC_VECTOR (3 downto 0));
 end Main;
 
 architecture Behavioral of Main is

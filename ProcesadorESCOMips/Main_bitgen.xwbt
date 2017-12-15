@@ -1,8 +1,8 @@
 INTSTYLE=ise
 INFILE=/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ncd
 OUTFILE=/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.bit
-FAMILY=Artix7
-PART=xc7a100t-3csg324
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
 WORKINGDIR=/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips
 LICENSE=WebPack
 USER_INFO=210844018_0_0_757

@@ -7,7 +7,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 Design file:              Main.ncd
 Physical constraint file: Main.pcf
-Device,package,speed:     xc7a100t,csg324,C,-3 (PRODUCTION 1.10 2013-10-13)
+Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
 Report level:             verbose report
 
 Environment Variable      Effect 
@@ -36,7 +36,7 @@ Setup/Hold to clock RCLK
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-RCLR        |    0.854(R)|      FAST  |    1.400(R)|      SLOW  |RCLK_BUFGP        |   0.000|
+RCLR        |    1.887(R)|      SLOW  |   -0.383(R)|      SLOW  |RCLK_BUFGP        |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock to Setup on destination clock RCLK
@@ -44,18 +44,18 @@ Clock to Setup on destination clock RCLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-RCLK           |    5.023|         |         |         |
+RCLK           |    3.982|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Wed Dec 13 22:59:46 2017 
+Analysis completed Fri Dec 15 02:58:02 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 783 MB
+Peak Memory Usage: 416 MB
 
 
 

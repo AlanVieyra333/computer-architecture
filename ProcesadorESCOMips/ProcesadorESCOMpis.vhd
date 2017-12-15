@@ -75,8 +75,8 @@ end component;
 
 component MIPS is
 	Port ( clr, clk: in  STD_LOGIC;
-		mips_result: out STD_LOGIC_VECTOR (7 downto 0);
-		PC : out STD_LOGIC_VECTOR (7 downto 0)
+		mips_result: out STD_LOGIC_VECTOR (3 downto 0);
+		PC : out STD_LOGIC_VECTOR (3 downto 0)
 		);
 end component;
 

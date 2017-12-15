@@ -8,8 +8,8 @@ use work.UnitControl_pkg.all;
 
 entity MIPS is
 	Port ( clr, clk: in  STD_LOGIC;
-		mips_result: out STD_LOGIC_VECTOR (7 downto 0);
-		PC : out STD_LOGIC_VECTOR (7 downto 0)
+		mips_result: out STD_LOGIC_VECTOR (3 downto 0);
+		PC : out STD_LOGIC_VECTOR (3 downto 0)
 		);
 end entity;
 
@@ -62,9 +62,9 @@ architecture Behavioral of MIPS is
 	signal sop1_result : std_logic_vector(15 downto 0) := (others => '0');
 	signal sop2_result : std_logic_vector(15 downto 0) := (others => '0');
 begin
-	PC <= stack_result(7 downto 0);
+	PC <= stack_result(3 downto 0);
 	--mips_result <= alu_result(7 downto 0);
-	mips_result <= alu_result(7 downto 0);
+	mips_result <= alu_result(3 downto 0);
 
 	Pila: stack PORT MAP (
 		clk => clk,

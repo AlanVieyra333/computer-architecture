@@ -5,23 +5,24 @@
 
 INFO: [Common 17-78] Attempting to get a license: PlanAhead
 INFO: [Common 17-290] Got license for PlanAhead
-INFO: [Common 17-86] Your PlanAhead license expires in -988 day(s)
+INFO: [Common 17-86] Your PlanAhead license expires in -990 day(s)
 INFO: [Device 21-36] Loading parts and site information from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
 Parsing RTL primitives file [/usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 Finished parsing RTL primitives file [/usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
 start_gui
 source /home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/pa.fromNetlist.tcl
-# create_project -name ProcesadorESCOMips -dir "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/planAhead_run_2" -part xc7a100tcsg324-3
+# create_project -name ProcesadorESCOMips -dir "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/planAhead_run_1" -part xc6slx4tqg144-3
 # set_property design_mode GateLvl [get_property srcset [current_run -impl]]
 # set_property edif_top_file "/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ngc" [ get_property srcset [ current_run ] ]
 # add_files -norecurse { {/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips} }
+# set_param project.pinAheadLayout  yes
 # set_property target_constrs_file "Main.ucf" [current_fileset -constrset]
 Adding file '/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf' to fileset 'constrs_1'
 # add_files [list {Main.ucf}] -fileset [get_property constrset [current_run]]
 # link_design
 Design is defaulting to srcset: sources_1
 Design is defaulting to constrset: constrs_1
-Design is defaulting to project part: xc7a100tcsg324-3
+Design is defaulting to project part: xc6slx4tqg144-3
 WARNING: es_MX:es is not supported as a language.  Using usenglish.
 Release 14.7 - ngc2edif P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
@@ -33,51 +34,60 @@ WARNING:NetListWriters:298 - No output is written to Main.xncf, ignored.
 Processing design ...
    Preping design's networks ...
    Preping design's macros ...
-WARNING:NetListWriters:306 - Signal bus ESCOMips/instruction<24 : 0> on block
+WARNING:NetListWriters:306 - Signal bus ESCOMips/instruction[24 : 0] on block
    Main is not reconstructed, because there are some missing bus signals.
-WARNING:NetListWriters:306 - Signal bus ESCOMips/sop2_result<14 : 1> on block
+WARNING:NetListWriters:306 - Signal bus ESCOMips/sop2_result[14 : 1] on block
    Main is not reconstructed, because there are some missing bus signals.
-WARNING:NetListWriters:306 - Signal bus ESCOMips/sop1_result<15 : 0> on block
-   Main is not reconstructed, because there are some missing bus signals.
-WARNING:NetListWriters:306 - Signal bus ESCOMips/ALU/cAux<10 : 1> on block Main
+WARNING:NetListWriters:306 - Signal bus ESCOMips/ALU/cAux[10 : 1] on block Main
    is not reconstructed, because there are some missing bus signals.
   finished :Prep
 Writing EDIF netlist file Main.edif ...
-ngc2edif: Total memory usage is 107080 kilobytes
+ngc2edif: Total memory usage is 107196 kilobytes
 
-Parsing EDIF File [./planAhead_run_2/ProcesadorESCOMips.data/cache/Main_ngc_9b71c893.edif]
-Finished Parsing EDIF File [./planAhead_run_2/ProcesadorESCOMips.data/cache/Main_ngc_9b71c893.edif]
-INFO: [Netlist 29-17] Analyzing 167 Unisim elements for replacement
+Parsing EDIF File [./planAhead_run_1/ProcesadorESCOMips.data/cache/Main_ngc_9b71c893.edif]
+Finished Parsing EDIF File [./planAhead_run_1/ProcesadorESCOMips.data/cache/Main_ngc_9b71c893.edif]
+INFO: [Netlist 29-17] Analyzing 129 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 WARNING: [Netlist 29-43] Netlist 'Main' is not ideal for floorplanning, since the cellview 'Main' defined in file 'Main.ngc' contains large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
-Loading clock regions from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/artix7/artix7/xc7a100t/ClockRegion.xml
-Loading clock buffers from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/artix7/artix7/xc7a100t/ClockBuffers.xml
-Loading clock placement rules from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/artix7/ClockPlacerRules.xml
-Loading package pin functions from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/artix7/PinFunctions.xml...
-Loading package from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/artix7/artix7/xc7a100t/csg324/Package.xml
-Loading io standards from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/artix7/IOStandards.xml
-Loading device configuration modes from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/artix7/ConfigModes.xml
-Loading list of drcs for the architecture : /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/artix7/drc.xml
+Loading clock regions from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx4/ClockRegion.xml
+Loading clock buffers from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx4/ClockBuffers.xml
+Loading package pin functions from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx4/tqg144/Package.xml
+Loading io standards from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : /usr/local/xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/drc.xml
 Parsing UCF File [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site E3 [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:1]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site V10 [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:2]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site H17 [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:4]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site K15 [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:5]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site J13 [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:6]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site N14 [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:7]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site V16 [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:8]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site T15 [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:9]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site U14 [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:10]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site T16 [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:11]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'DATA[7]' [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:14]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'DATA[6]' [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:15]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'DATA[5]' [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:16]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'DATA[4]' [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:17]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'PC[7]' [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:22]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'PC[6]' [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:23]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'PC[5]' [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:24]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'PC[4]' [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:25]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site T11 [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:35]
+CRITICAL WARNING: [Designutils 20-30] Unrecognized site R11 [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf:36]
 Finished Parsing UCF File [/home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/Main.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 167 instances were transformed.
+  A total of 129 instances were transformed.
   BUFGP => BUFGP (IBUF, BUFG): 1 instances
-  FDC => FDCE: 33 instances
-  FDCE_1 => FDCE (inverted pins: C): 3 instances
-  FDC_1 => FDCE (inverted pins: C): 1 instances
-  FD_1 => FDCE (inverted pins: C): 1 instances
   RAM256X1S => RAM256X1S (RAMS64E, RAMS64E, RAMS64E, RAMS64E, MUXF7, MUXF7, MUXF8): 128 instances
 
-Phase 0 | Netlist Checksum: d6dac68d
-link_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:17 . Memory (MB): peak = 3085.941 ; gain = 314.500
-set_property iostandard {} [get_ports [list {DATA[7]} {DATA[6]} {DATA[5]} {DATA[4]} {DATA[3]} {DATA[2]} {DATA[1]} {DATA[0]}]]
-set_property iostandard LVCMOS18 [get_ports [list RCLK]]
-set_property iostandard {} [get_ports [list {PC[7]} {PC[6]} {PC[5]} {PC[4]} {PC[3]} {PC[2]} {PC[1]} {PC[0]}]]
-set_property iostandard {} [get_ports [list RCLR]]
-set_property iostandard {} [get_ports [list RCLK]]
-save_constraints
+Phase 0 | Netlist Checksum: 58f03f91
+link_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:10 . Memory (MB): peak = 2921.809 ; gain = 158.332
+set_property package_pin "" [get_ports [list  {PC[3]}]]
 exit
 ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
-INFO: [Common 17-206] Exiting PlanAhead at Wed Dec 13 22:13:21 2017...
+INFO: [Common 17-206] Exiting PlanAhead at Fri Dec 15 02:23:20 2017...
 INFO: [Common 17-83] Releasing license: PlanAhead

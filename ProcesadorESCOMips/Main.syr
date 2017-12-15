@@ -49,7 +49,7 @@ Ignore Synthesis Constraint File   : NO
 ---- Target Parameters
 Output File Name                   : "Main"
 Output Format                      : NGC
-Target Device                      : xc7a100t-3-csg324
+Target Device                      : xc6slx16-3-csg324
 
 ---- Source Options
 Top Module Name                    : Main
@@ -73,7 +73,7 @@ LUT Combining                      : Auto
 Reduce Control Sets                : Auto
 Add IO Buffers                     : YES
 Global Maximum Fanout              : 100000
-Add Generic Clock Buffer(BUFG)     : 32
+Add Generic Clock Buffer(BUFG)     : 16
 Register Duplication               : YES
 Optimize Instantiated Primitives   : NO
 Use Clock Enable                   : Auto
@@ -2687,6 +2687,31 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 WARNING:Xst:2677 - Node <Banderas/c> of sequential type is unconnected in block <UnitControl>.
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set or reset and opposite initialization value:
+    DivisorDeFrecuencia/clk_aux in unit <Main>
+
 
 Optimizing unit <Main> ...
 
@@ -2830,10 +2855,13 @@ WARNING:Xst:1293 - FF/Latch <ESCOMips/ArchivosDeRegistro/bank_13_15> has a const
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block Main, actual ratio is 1.
-FlipFlop ESCOMips/Pila/SP_0 has been replicated 1 time(s)
-FlipFlop ESCOMips/Pila/SP_1 has been replicated 1 time(s)
-FlipFlop ESCOMips/Pila/SP_2 has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 5) on block Main, actual ratio is 12.
+WARNING:Xst:1426 - The value init of the FF/Latch DivisorDeFrecuencia/clk_aux_LD hinder the constant cleaning in the block Main.
+   You should achieve better results by setting this init to 0.
+FlipFlop ESCOMips/Pila/SP_0 has been replicated 3 time(s)
+FlipFlop ESCOMips/Pila/SP_1 has been replicated 3 time(s)
+FlipFlop ESCOMips/Pila/SP_2 has been replicated 2 time(s)
+FlipFlop ESCOMips/Pila/SP_3 has been replicated 3 time(s)
 
 Final Macro Processing ...
 
@@ -2841,8 +2869,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 430
- Flip-Flops                                            : 430
+# Registers                                            : 439
+ Flip-Flops                                            : 439
 
 =========================================================================
 
@@ -2865,61 +2893,63 @@ Top Level Output File Name         : Main.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1078
+# BELS                             : 1139
 #      GND                         : 1
-#      INV                         : 6
+#      INV                         : 5
 #      LUT1                        : 60
 #      LUT2                        : 40
-#      LUT3                        : 108
-#      LUT4                        : 35
-#      LUT5                        : 132
-#      LUT6                        : 395
+#      LUT3                        : 110
+#      LUT4                        : 30
+#      LUT5                        : 156
+#      LUT6                        : 412
 #      MUXCY                       : 61
-#      MUXF7                       : 111
+#      MUXF7                       : 135
 #      MUXF8                       : 64
 #      VCC                         : 1
 #      XORCY                       : 64
-# FlipFlops/Latches                : 430
+# FlipFlops/Latches                : 440
 #      FD_1                        : 1
 #      FDC                         : 33
 #      FDC_1                       : 1
-#      FDCE                        : 392
+#      FDCE                        : 400
 #      FDCE_1                      : 3
+#      FDE                         : 1
+#      LD                          : 1
 # RAMS                             : 128
 #      RAM256X1S                   : 128
-# Clock Buffers                    : 2
-#      BUFG                        : 1
+# Clock Buffers                    : 3
+#      BUFG                        : 2
 #      BUFGP                       : 1
-# IO Buffers                       : 17
+# IO Buffers                       : 9
 #      IBUF                        : 1
-#      OBUF                        : 16
+#      OBUF                        : 8
 
 Device utilization summary:
 ---------------------------
 
-Selected Device : 7a100tcsg324-3 
+Selected Device : 6slx16csg324-3 
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             430  out of  126800     0%  
- Number of Slice LUTs:                 1288  out of  63400     2%  
-    Number used as Logic:               776  out of  63400     1%  
-    Number used as Memory:              512  out of  19000     2%  
+ Number of Slice Registers:             440  out of  18224     2%  
+ Number of Slice LUTs:                 1325  out of   9112    14%  
+    Number used as Logic:               813  out of   9112     8%  
+    Number used as Memory:              512  out of   2176    23%  
        Number used as RAM:              512
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1597
-   Number with an unused Flip Flop:    1167  out of   1597    73%  
-   Number with an unused LUT:           309  out of   1597    19%  
-   Number of fully used LUT-FF pairs:   121  out of   1597     7%  
-   Number of unique control sets:        30
+ Number of LUT Flip Flop pairs used:   1555
+   Number with an unused Flip Flop:    1115  out of   1555    71%  
+   Number with an unused LUT:           230  out of   1555    14%  
+   Number of fully used LUT-FF pairs:   210  out of   1555    13%  
+   Number of unique control sets:        32
 
 IO Utilization: 
- Number of IOs:                          18
- Number of bonded IOBs:                  18  out of    210     8%  
+ Number of IOs:                          10
+ Number of bonded IOBs:                  10  out of    232     4%  
 
 Specific Feature Utilization:
- Number of BUFG/BUFGCTRLs:                2  out of     32     6%  
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
 
 ---------------------------
 Partition Resource Summary:
@@ -2939,12 +2969,16 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-RCLK                               | BUFGP                  | 33    |
-DivisorDeFrecuencia/clk_aux        | BUFG                   | 525   |
------------------------------------+------------------------+-------+
+-----------------------------------------------------------+------------------------------+-------+
+Clock Signal                                               | Clock buffer(FF name)        | Load  |
+-----------------------------------------------------------+------------------------------+-------+
+DivisorDeFrecuencia/clk_aux(DivisorDeFrecuencia/clk_aux1:O)| BUFG(*)(CLR_Rectificador/clr)| 533   |
+RCLK                                                       | BUFGP                        | 34    |
+RCLR                                                       | IBUF+BUFG                    | 1     |
+-----------------------------------------------------------+------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -2954,9 +2988,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 17.497ns (Maximum Frequency: 57.153MHz)
-   Minimum input arrival time before clock: 0.736ns
-   Maximum output required time after clock: 7.974ns
+   Minimum period: 32.319ns (Maximum Frequency: 30.942MHz)
+   Minimum input arrival time before clock: 2.972ns
+   Maximum output required time after clock: 16.008ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -2965,121 +2999,70 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'RCLK'
-  Clock period: 2.571ns (frequency: 388.984MHz)
-  Total number of paths / destination ports: 1585 / 34
+  Clock period: 4.508ns (frequency: 221.842MHz)
+  Total number of paths / destination ports: 1620 / 36
 -------------------------------------------------------------------------
-Delay:               2.571ns (Levels of Logic = 34)
-  Source:            DivisorDeFrecuencia/count_0 (FF)
-  Destination:       DivisorDeFrecuencia/count_31 (FF)
+Delay:               4.508ns (Levels of Logic = 3)
+  Source:            DivisorDeFrecuencia/count_20 (FF)
+  Destination:       DivisorDeFrecuencia/count_0 (FF)
   Source Clock:      RCLK rising
   Destination Clock: RCLK rising
 
-  Data Path: DivisorDeFrecuencia/count_0 to DivisorDeFrecuencia/count_31
+  Data Path: DivisorDeFrecuencia/count_20 to DivisorDeFrecuencia/count_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              2   0.361   0.284  DivisorDeFrecuencia/count_0 (DivisorDeFrecuencia/count_0)
-     INV:I->O              1   0.113   0.000  DivisorDeFrecuencia/Mcount_count_lut<0>_INV_0 (DivisorDeFrecuencia/Mcount_count_lut<0>)
-     MUXCY:S->O            1   0.353   0.000  DivisorDeFrecuencia/Mcount_count_cy<0> (DivisorDeFrecuencia/Mcount_count_cy<0>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<1> (DivisorDeFrecuencia/Mcount_count_cy<1>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<2> (DivisorDeFrecuencia/Mcount_count_cy<2>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<3> (DivisorDeFrecuencia/Mcount_count_cy<3>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<4> (DivisorDeFrecuencia/Mcount_count_cy<4>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<5> (DivisorDeFrecuencia/Mcount_count_cy<5>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<6> (DivisorDeFrecuencia/Mcount_count_cy<6>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<7> (DivisorDeFrecuencia/Mcount_count_cy<7>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<8> (DivisorDeFrecuencia/Mcount_count_cy<8>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<9> (DivisorDeFrecuencia/Mcount_count_cy<9>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<10> (DivisorDeFrecuencia/Mcount_count_cy<10>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<11> (DivisorDeFrecuencia/Mcount_count_cy<11>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<12> (DivisorDeFrecuencia/Mcount_count_cy<12>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<13> (DivisorDeFrecuencia/Mcount_count_cy<13>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<14> (DivisorDeFrecuencia/Mcount_count_cy<14>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<15> (DivisorDeFrecuencia/Mcount_count_cy<15>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<16> (DivisorDeFrecuencia/Mcount_count_cy<16>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<17> (DivisorDeFrecuencia/Mcount_count_cy<17>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<18> (DivisorDeFrecuencia/Mcount_count_cy<18>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<19> (DivisorDeFrecuencia/Mcount_count_cy<19>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<20> (DivisorDeFrecuencia/Mcount_count_cy<20>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<21> (DivisorDeFrecuencia/Mcount_count_cy<21>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<22> (DivisorDeFrecuencia/Mcount_count_cy<22>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<23> (DivisorDeFrecuencia/Mcount_count_cy<23>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<24> (DivisorDeFrecuencia/Mcount_count_cy<24>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<25> (DivisorDeFrecuencia/Mcount_count_cy<25>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<26> (DivisorDeFrecuencia/Mcount_count_cy<26>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<27> (DivisorDeFrecuencia/Mcount_count_cy<27>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<28> (DivisorDeFrecuencia/Mcount_count_cy<28>)
-     MUXCY:CI->O           1   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<29> (DivisorDeFrecuencia/Mcount_count_cy<29>)
-     MUXCY:CI->O           0   0.023   0.000  DivisorDeFrecuencia/Mcount_count_cy<30> (DivisorDeFrecuencia/Mcount_count_cy<30>)
-     XORCY:CI->O           1   0.370   0.295  DivisorDeFrecuencia/Mcount_count_xor<31> (Result<31>)
-     LUT2:I1->O            1   0.097   0.000  DivisorDeFrecuencia/Mcount_count_eqn_311 (DivisorDeFrecuencia/Mcount_count_eqn_31)
-     FDC:D                     0.008          DivisorDeFrecuencia/count_31
+     FDC:C->Q              2   0.447   0.981  DivisorDeFrecuencia/count_20 (DivisorDeFrecuencia/count_20)
+     LUT6:I0->O            1   0.203   0.944  DivisorDeFrecuencia/count[31]_GND_6_o_equal_2_o<31>1 (DivisorDeFrecuencia/count[31]_GND_6_o_equal_2_o<31>)
+     LUT6:I0->O           34   0.203   1.425  DivisorDeFrecuencia/count[31]_GND_6_o_equal_2_o<31>7 (DivisorDeFrecuencia/count[31]_GND_6_o_equal_2_o)
+     LUT2:I0->O            1   0.203   0.000  DivisorDeFrecuencia/Mcount_count_eqn_01 (DivisorDeFrecuencia/Mcount_count_eqn_0)
+     FDC:D                     0.102          DivisorDeFrecuencia/count_0
     ----------------------------------------
-    Total                      2.571ns (1.992ns logic, 0.579ns route)
-                                       (77.5% logic, 22.5% route)
+    Total                      4.508ns (1.158ns logic, 3.350ns route)
+                                       (25.7% logic, 74.3% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'DivisorDeFrecuencia/clk_aux'
-  Clock period: 17.497ns (frequency: 57.153MHz)
-  Total number of paths / destination ports: 3301213139 / 2466
+  Clock period: 32.319ns (frequency: 30.942MHz)
+  Total number of paths / destination ports: 2693522940 / 2490
 -------------------------------------------------------------------------
-Delay:               8.748ns (Levels of Logic = 17)
-  Source:            ESCOMips/Pila/PC_4_8 (FF)
+Delay:               16.159ns (Levels of Logic = 16)
+  Source:            ESCOMips/Pila/SP_1_2 (FF)
   Destination:       ESCOMips/UnidadDeControl/Banderas/z (FF)
   Source Clock:      DivisorDeFrecuencia/clk_aux rising
   Destination Clock: DivisorDeFrecuencia/clk_aux falling
 
-  Data Path: ESCOMips/Pila/PC_4_8 to ESCOMips/UnidadDeControl/Banderas/z
+  Data Path: ESCOMips/Pila/SP_1_2 to ESCOMips/UnidadDeControl/Banderas/z
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             2   0.361   0.697  ESCOMips/Pila/PC_4_8 (ESCOMips/Pila/PC_4_8)
-     LUT6:I0->O            1   0.097   0.000  ESCOMips/Pila/mux30_51 (ESCOMips/Pila/mux30_51)
-     MUXF7:I1->O           1   0.279   0.000  ESCOMips/Pila/mux30_4_f7 (ESCOMips/Pila/mux30_4_f7)
-     MUXF8:I0->O           7   0.218   0.711  ESCOMips/Pila/mux30_2_f8 (ESCOMips/stack_result<8>)
-     LUT5:I0->O            5   0.097   0.314  ESCOMips_MemoriaDePrograma/Mram_operation3111_SW0 (ESCOMips_N4)
-     LUT6:I5->O           29   0.097   0.790  ESCOMips_MemoriaDePrograma/Mram_operation4711 (ESCOMips/instruction<24>)
-     LUT5:I0->O            4   0.097   0.309  ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC11 (ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC1)
-     LUT4:I3->O           21   0.097   0.386  ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC13 (ESCOMips/UnidadDeControl/SDOPC)
-     LUT6:I5->O           16   0.097   0.348  ESCOMips/Mux_SR2/Mmux_output31 (ESCOMips/read_reg2<2>)
-     MUXF7:S->O            1   0.335   0.000  ESCOMips/ArchivosDeRegistro/mux26_4_f7 (ESCOMips/ArchivosDeRegistro/mux26_4_f7)
-     MUXF8:I0->O          10   0.218   0.337  ESCOMips/ArchivosDeRegistro/mux26_2_f8 (ESCOMips/read_data2<4>)
-     LUT6:I5->O            8   0.097   0.411  ESCOMips/ALU/GENERATE_ALU[4].ALUxbit/Inversor2/Mmux_output11 (ESCOMips/ALU/GENERATE_ALU[4].ALUxbit/result_b)
-     LUT6:I4->O            1   0.097   0.000  ESCOMips/ALU/GENERATE_ALU[6].ALUxbit/Suma/cout1_SW0_SW0_G (N406)
-     MUXF7:I1->O           1   0.279   0.379  ESCOMips/ALU/GENERATE_ALU[6].ALUxbit/Suma/cout1_SW0_SW0 (N346)
-     LUT5:I3->O            9   0.097   0.332  ESCOMips/ALU/GENERATE_ALU[6].ALUxbit/Suma/cout1 (ESCOMips/ALU/cAux<7>)
-     LUT6:I5->O            5   0.097   0.575  ESCOMips/ALU/GENERATE_ALU[7].ALUxbit/Operador/Mmux_output1 (DATA_7_OBUF)
-     LUT6:I2->O            1   0.097   0.295  ESCOMips/ALU/z2_SW0 (N355)
-     LUT6:I5->O            1   0.097   0.000  ESCOMips/ALU/z3 (ESCOMips/z)
-     FDCE_1:D                  0.008          ESCOMips/UnidadDeControl/Banderas/z
+     FDCE:C->Q            13   0.447   1.037  ESCOMips/Pila/SP_1_2 (ESCOMips/Pila/SP_1_2)
+     LUT6:I4->O            1   0.203   0.000  ESCOMips/Pila/mux30_4 (ESCOMips/Pila/mux30_4)
+     MUXF7:I1->O           1   0.140   0.000  ESCOMips/Pila/mux30_3_f7 (ESCOMips/Pila/mux30_3_f7)
+     MUXF8:I1->O           7   0.152   1.138  ESCOMips/Pila/mux30_2_f8 (ESCOMips/stack_result<8>)
+     LUT6:I0->O            6   0.203   0.745  ESCOMips_MemoriaDePrograma/Mram_operation511_SW0 (ESCOMips_N0)
+     LUT6:I5->O          145   0.205   1.996  ESCOMips_instruction<7> (ESCOMips/instruction<10>)
+     LUT5:I4->O            8   0.205   0.907  ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC11 (ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC1)
+     LUT4:I2->O            1   0.203   0.580  ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC13_1 (ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC13)
+     LUT6:I5->O           16   0.205   1.004  ESCOMips/Mux_SR2/Mmux_output31 (ESCOMips/read_reg2<2>)
+     MUXF7:S->O            1   0.148   0.000  ESCOMips/ArchivosDeRegistro/mux27_4_f7 (ESCOMips/ArchivosDeRegistro/mux27_4_f7)
+     MUXF8:I0->O          11   0.144   0.883  ESCOMips/ArchivosDeRegistro/mux27_2_f8 (ESCOMips/read_data2<5>)
+     LUT6:I5->O            6   0.205   0.973  ESCOMips/ALU/GENERATE_ALU[5].ALUxbit/Inversor2/Mmux_output11 (ESCOMips/ALU/GENERATE_ALU[5].ALUxbit/result_b)
+     LUT6:I3->O            1   0.205   0.808  ESCOMips/ALU/GENERATE_ALU[6].ALUxbit/Suma/cout1_SW0_SW1 (N368)
+     LUT6:I3->O            6   0.205   0.745  ESCOMips/ALU/GENERATE_ALU[6].ALUxbit/Suma/cout1 (ESCOMips/ALU/cAux<7>)
+     LUT6:I5->O            6   0.205   0.745  ESCOMips/ALU/GENERATE_ALU[9].ALUxbit/Suma/cout1 (ESCOMips/ALU/cAux<10>)
+     LUT6:I5->O            3   0.205   1.015  ESCOMips/ALU/GENERATE_ALU[14].ALUxbit/Operador/Mmux_output1 (ESCOMips/alu_result<14>)
+     LUT6:I0->O            1   0.203   0.000  ESCOMips/ALU/z3 (ESCOMips/z)
+     FDCE_1:D                  0.102          ESCOMips/UnidadDeControl/Banderas/z
     ----------------------------------------
-    Total                      8.748ns (2.862ns logic, 5.886ns route)
-                                       (32.7% logic, 67.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'RCLK'
-  Total number of paths / destination ports: 33 / 33
--------------------------------------------------------------------------
-Offset:              0.736ns (Levels of Logic = 1)
-  Source:            RCLR (PAD)
-  Destination:       DivisorDeFrecuencia/clk_aux (FF)
-  Destination Clock: RCLK rising
-
-  Data Path: RCLR to DivisorDeFrecuencia/clk_aux
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IBUF:I->O            34   0.001   0.386  RCLR_IBUF (RCLR_IBUF)
-     FDCE:CLR                  0.349          DivisorDeFrecuencia/clk_aux
-    ----------------------------------------
-    Total                      0.736ns (0.350ns logic, 0.386ns route)
-                                       (47.5% logic, 52.5% route)
+    Total                     16.159ns (3.585ns logic, 12.574ns route)
+                                       (22.2% logic, 77.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'DivisorDeFrecuencia/clk_aux'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              0.395ns (Levels of Logic = 1)
+Offset:              2.644ns (Levels of Logic = 1)
   Source:            RCLR (PAD)
   Destination:       CLR_Rectificador/clr (FF)
   Destination Clock: DivisorDeFrecuencia/clk_aux falling
@@ -3088,45 +3071,62 @@ Offset:              0.395ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            34   0.001   0.386  RCLR_IBUF (RCLR_IBUF)
-     FD_1:D                    0.008          CLR_Rectificador/clr
+     IBUF:I->O            34   1.222   1.320  RCLR_IBUF (RCLR_IBUF)
+     FD_1:D                    0.102          CLR_Rectificador/clr
     ----------------------------------------
-    Total                      0.395ns (0.009ns logic, 0.386ns route)
-                                       (2.3% logic, 97.7% route)
+    Total                      2.644ns (1.324ns logic, 1.320ns route)
+                                       (50.1% logic, 49.9% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'DivisorDeFrecuencia/clk_aux'
-  Total number of paths / destination ports: 2572661 / 16
+Timing constraint: Default OFFSET IN BEFORE for Clock 'RCLK'
+  Total number of paths / destination ports: 33 / 33
 -------------------------------------------------------------------------
-Offset:              7.974ns (Levels of Logic = 16)
-  Source:            ESCOMips/Pila/PC_4_8 (FF)
-  Destination:       DATA<7> (PAD)
-  Source Clock:      DivisorDeFrecuencia/clk_aux rising
+Offset:              2.972ns (Levels of Logic = 1)
+  Source:            RCLR (PAD)
+  Destination:       DivisorDeFrecuencia/count_0 (FF)
+  Destination Clock: RCLK rising
 
-  Data Path: ESCOMips/Pila/PC_4_8 to DATA<7>
+  Data Path: RCLR to DivisorDeFrecuencia/count_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q             2   0.361   0.698  ESCOMips/Pila/PC_4_8 (ESCOMips/Pila/PC_4_8)
-     LUT6:I0->O            1   0.097   0.000  ESCOMips/Pila/mux30_51 (ESCOMips/Pila/mux30_51)
-     MUXF7:I1->O           1   0.279   0.000  ESCOMips/Pila/mux30_4_f7 (ESCOMips/Pila/mux30_4_f7)
-     MUXF8:I0->O           7   0.218   0.711  ESCOMips/Pila/mux30_2_f8 (ESCOMips/stack_result<8>)
-     LUT5:I0->O            5   0.097   0.314  ESCOMips_MemoriaDePrograma/Mram_operation3111_SW0 (ESCOMips_N4)
-     LUT6:I5->O           29   0.097   0.790  ESCOMips_MemoriaDePrograma/Mram_operation4711 (ESCOMips/instruction<24>)
-     LUT5:I0->O            4   0.097   0.309  ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC11 (ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC1)
-     LUT4:I3->O           21   0.097   0.386  ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC13 (ESCOMips/UnidadDeControl/SDOPC)
-     LUT6:I5->O           16   0.097   0.348  ESCOMips/Mux_SR2/Mmux_output31 (ESCOMips/read_reg2<2>)
-     MUXF7:S->O            1   0.335   0.000  ESCOMips/ArchivosDeRegistro/mux26_4_f7 (ESCOMips/ArchivosDeRegistro/mux26_4_f7)
-     MUXF8:I0->O          10   0.218   0.337  ESCOMips/ArchivosDeRegistro/mux26_2_f8 (ESCOMips/read_data2<4>)
-     LUT6:I5->O            8   0.097   0.411  ESCOMips/ALU/GENERATE_ALU[4].ALUxbit/Inversor2/Mmux_output11 (ESCOMips/ALU/GENERATE_ALU[4].ALUxbit/result_b)
-     LUT6:I4->O            1   0.097   0.000  ESCOMips/ALU/GENERATE_ALU[6].ALUxbit/Suma/cout1_SW0_SW0_G (N406)
-     MUXF7:I1->O           1   0.279   0.379  ESCOMips/ALU/GENERATE_ALU[6].ALUxbit/Suma/cout1_SW0_SW0 (N346)
-     LUT5:I3->O            9   0.097   0.332  ESCOMips/ALU/GENERATE_ALU[6].ALUxbit/Suma/cout1 (ESCOMips/ALU/cAux<7>)
-     LUT6:I5->O            5   0.097   0.298  ESCOMips/ALU/GENERATE_ALU[7].ALUxbit/Operador/Mmux_output1 (DATA_7_OBUF)
-     OBUF:I->O                 0.000          DATA_7_OBUF (DATA<7>)
+     IBUF:I->O            34   1.222   1.320  RCLR_IBUF (RCLR_IBUF)
+     FDC:CLR                   0.430          DivisorDeFrecuencia/count_0
     ----------------------------------------
-    Total                      7.974ns (2.660ns logic, 5.314ns route)
-                                       (33.4% logic, 66.6% route)
+    Total                      2.972ns (1.652ns logic, 1.320ns route)
+                                       (55.6% logic, 44.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'DivisorDeFrecuencia/clk_aux'
+  Total number of paths / destination ports: 686589 / 8
+-------------------------------------------------------------------------
+Offset:              16.008ns (Levels of Logic = 14)
+  Source:            ESCOMips/Pila/SP_1_2 (FF)
+  Destination:       DATA<3> (PAD)
+  Source Clock:      DivisorDeFrecuencia/clk_aux rising
+
+  Data Path: ESCOMips/Pila/SP_1_2 to DATA<3>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q            13   0.447   1.037  ESCOMips/Pila/SP_1_2 (ESCOMips/Pila/SP_1_2)
+     LUT6:I4->O            1   0.203   0.000  ESCOMips/Pila/mux30_4 (ESCOMips/Pila/mux30_4)
+     MUXF7:I1->O           1   0.140   0.000  ESCOMips/Pila/mux30_3_f7 (ESCOMips/Pila/mux30_3_f7)
+     MUXF8:I1->O           7   0.152   1.138  ESCOMips/Pila/mux30_2_f8 (ESCOMips/stack_result<8>)
+     LUT6:I0->O            6   0.203   0.745  ESCOMips_MemoriaDePrograma/Mram_operation511_SW0 (ESCOMips_N0)
+     LUT6:I5->O          145   0.205   1.996  ESCOMips_instruction<7> (ESCOMips/instruction<10>)
+     LUT5:I4->O            8   0.205   0.907  ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC11 (ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC1)
+     LUT4:I2->O            1   0.203   0.580  ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC13_1 (ESCOMips/UnidadDeControl/ControlAutomata/Mmux_SDOPC13)
+     LUT6:I5->O           16   0.205   1.004  ESCOMips/Mux_SR2/Mmux_output31 (ESCOMips/read_reg2<2>)
+     MUXF7:S->O            1   0.148   0.000  ESCOMips/ArchivosDeRegistro/mux24_4_f7 (ESCOMips/ArchivosDeRegistro/mux24_4_f7)
+     MUXF8:I0->O          10   0.144   0.857  ESCOMips/ArchivosDeRegistro/mux24_2_f8 (ESCOMips/read_data2<2>)
+     LUT6:I5->O            2   0.205   0.845  ESCOMips/ALU/GENERATE_ALU[2].ALUxbit/Inversor2/Mmux_output11 (ESCOMips/ALU/GENERATE_ALU[2].ALUxbit/result_b)
+     LUT6:I3->O            6   0.205   0.745  ESCOMips/ALU/GENERATE_ALU[2].ALUxbit/Suma/cout1 (ESCOMips/ALU/cAux<3>)
+     LUT6:I5->O            5   0.205   0.714  ESCOMips/ALU/GENERATE_ALU[3].ALUxbit/Operador/Mmux_output1 (DATA_3_OBUF)
+     OBUF:I->O                 2.571          DATA_3_OBUF (DATA<3>)
+    ----------------------------------------
+    Total                     16.008ns (5.441ns logic, 10.567ns route)
+                                       (34.0% logic, 66.0% route)
 
 =========================================================================
 
@@ -3138,7 +3138,7 @@ Clock to Setup on destination clock DivisorDeFrecuencia/clk_aux
                            | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock               |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------------------+---------+---------+---------+---------+
-DivisorDeFrecuencia/clk_aux|    9.593|    7.539|    8.748|         |
+DivisorDeFrecuencia/clk_aux|   17.752|   13.640|   16.159|         |
 ---------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock RCLK
@@ -3146,21 +3146,22 @@ Clock to Setup on destination clock RCLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-RCLK           |    2.571|         |         |         |
+RCLK           |    4.508|         |         |         |
+RCLR           |         |    1.650|         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 21.00 secs
-Total CPU time to Xst completion: 19.75 secs
+Total REAL time to Xst completion: 17.00 secs
+Total CPU time to Xst completion: 15.44 secs
  
 --> 
 
 
-Total memory usage is 529876 kilobytes
+Total memory usage is 458132 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings : 2174 (   0 filtered)
+Number of warnings : 2176 (   0 filtered)
 Number of infos    :    9 (   0 filtered)
 

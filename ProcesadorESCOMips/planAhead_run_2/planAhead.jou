@@ -1,10 +1,11 @@
 #-----------------------------------------------------------
 # PlanAhead v14.7 (64-bit)
 # Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
-# Start of session at: Wed Dec 13 21:31:57 2017
-# Process ID: 7476
+# Start of session at: Fri Dec 15 02:24:46 2017
+# Process ID: 10519
 # Log file: /home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/planAhead_run_2/planAhead.log
 # Journal file: /home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/planAhead_run_2/planAhead.jou
 #-----------------------------------------------------------
 start_gui
 source /home/developer/Proyectos/xilinx/ProcesadorESCOMpis/ProcesadorESCOMips/pa.fromNetlist.tcl
+set_property package_pin "" [get_ports [list  {PC[3]}]]
